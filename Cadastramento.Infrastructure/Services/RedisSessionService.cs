@@ -1,6 +1,7 @@
 using System.Threading.Tasks;
 using StackExchange.Redis;
 using System.Collections.Generic;
+using System;
 
 namespace Cadastramento.Infrastructure
 {
@@ -30,6 +31,24 @@ namespace Cadastramento.Infrastructure
                 dict[e.Name] = e.Value;
             }
             return dict;
+        }
+
+        public async Task SaveSessionAsync(string sessionId, Dictionary<string, string> values, int ttlSeconds = 3600)
+        {
+            string redisKey = $"sessionEntrevista:{sessionId}";
+            var hashEntries = new List<HashEntry>();
+            foreach (var kv in values)
+            {
+                hashEntries.Add(new HashEntry(kv.Key, kv.Value));
+            }
+            if (hashEntries.Count > 0)
+            {
+                await _db.HashSetAsync(redisKey, hashEntries.ToArray());
+            }
+            if (ttlSeconds > 0)
+            {
+                await _db.KeyExpireAsync(redisKey, TimeSpan.FromSeconds(ttlSeconds));
+            }
         }
     }
 }

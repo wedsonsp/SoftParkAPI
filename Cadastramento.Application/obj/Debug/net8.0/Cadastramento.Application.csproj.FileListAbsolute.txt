@@ -9,3 +9,4 @@ C:\Users\wedson.souza\source\repos\Cadastramento\Cadastramento.Application\obj\D
 C:\Users\wedson.souza\source\repos\Cadastramento\Cadastramento.Application\obj\Debug\net8.0\refint\Cadastramento.Application.dll
 C:\Users\wedson.souza\source\repos\Cadastramento\Cadastramento.Application\obj\Debug\net8.0\Cadastramento.Application.pdb
 C:\Users\wedson.souza\source\repos\Cadastramento\Cadastramento.Application\obj\Debug\net8.0\ref\Cadastramento.Application.dll
+C:\Users\wedson.souza\source\repos\Cadastramento\Cadastramento.Application\obj\Debug\net8.0\Cadastramento.Application.sourcelink.json

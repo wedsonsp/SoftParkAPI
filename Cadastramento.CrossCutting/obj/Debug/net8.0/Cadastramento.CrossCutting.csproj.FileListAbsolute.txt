@@ -10,3 +10,4 @@ C:\Users\wedson.souza\source\repos\Cadastramento\Cadastramento.CrossCutting\obj\
 C:\Users\wedson.souza\source\repos\Cadastramento\Cadastramento.CrossCutting\obj\Debug\net8.0\refint\Cadastramento.CrossCutting.dll
 C:\Users\wedson.souza\source\repos\Cadastramento\Cadastramento.CrossCutting\obj\Debug\net8.0\Cadastramento.CrossCutting.pdb
 C:\Users\wedson.souza\source\repos\Cadastramento\Cadastramento.CrossCutting\obj\Debug\net8.0\ref\Cadastramento.CrossCutting.dll
+C:\Users\wedson.souza\source\repos\Cadastramento\Cadastramento.CrossCutting\obj\Debug\net8.0\Cadastramento.CrossCutting.sourcelink.json
