@@ -18,9 +18,14 @@ namespace Cadastramento.Infrastructure
         public async Task<(IEnumerable<User> Users, int TotalCount)> GetPagedAsync(int page, int pageSize)
         {
             using var conn = new SqlConnection(_connectionString);
-            string sqlData = @"SELECT u.Id, u.Usuario AS Username, u.Status, up.Perfil FROM usuario u
-                                LEFT JOIN usuario_perfil up ON u.id = up.usuario_id
-                                ORDER BY u.Id OFFSET @Offset ROWS FETCH NEXT @PageSize ROWS ONLY";
+            string sqlData = @"SELECT u.id AS Id,
+                                      u.nome AS Username,
+                                      CAST(u.status_fl AS bit) AS Status,
+                                      up.perfil AS Perfil
+                               FROM usuario u
+                               LEFT JOIN usuario_perfil up ON u.id = up.usuarioid
+                               ORDER BY u.id
+                               OFFSET @Offset ROWS FETCH NEXT @PageSize ROWS ONLY";
             string sqlCount = "SELECT COUNT(*) FROM usuario";
 
             var lookup = new Dictionary<int, User>();
@@ -45,8 +50,13 @@ namespace Cadastramento.Infrastructure
         public async Task<User> GetByIdAsync(int id)
         {
             using var conn = new SqlConnection(_connectionString);
-            string sql = @"SELECT u.Id, u.Usuario AS Username, u.Status, up.Perfil FROM usuario u
-                            LEFT JOIN usuario_perfil up ON u.id = up.usuario_id WHERE u.Id = @Id";
+            string sql = @"SELECT u.id AS Id,
+                                  u.nome AS Username,
+                                  CAST(u.status_fl AS bit) AS Status,
+                                  up.perfil AS Perfil
+                           FROM usuario u
+                           LEFT JOIN usuario_perfil up ON u.id = up.usuarioid
+                           WHERE u.id = @Id";
             var lookup = new Dictionary<int, User>();
             await conn.QueryAsync<User, string, User>(sql,
                 (user, perfil) =>
@@ -70,9 +80,9 @@ namespace Cadastramento.Infrastructure
             using var tx = conn.BeginTransaction();
             try
             {
-                string insertUser = "INSERT INTO usuario (Usuario, Status) VALUES (@Username, @Status); SELECT SCOPE_IDENTITY();";
-                var newId = await conn.ExecuteScalarAsync<int>(insertUser, new { user.Username, user.Status }, tx);
-                string insertPerfil = "INSERT INTO usuario_perfil (usuario_id, Perfil) VALUES (@UserId, @Perfil);";
+                string insertUser = "INSERT INTO usuario (nome, status_fl) VALUES (@Username, @Status); SELECT SCOPE_IDENTITY();";
+                var newId = await conn.ExecuteScalarAsync<int>(insertUser, new { user.Username, Status = user.Status ? 1 : 0 }, tx);
+                string insertPerfil = "INSERT INTO usuario_perfil (usuarioid, perfil) VALUES (@UserId, @Perfil);";
                 foreach (var perfil in user.Perfis)
                 {
                     await conn.ExecuteAsync(insertPerfil, new { UserId = newId, Perfil = perfil }, tx);
@@ -94,11 +104,11 @@ namespace Cadastramento.Infrastructure
             using var tx = conn.BeginTransaction();
             try
             {
-                string updateUser = "UPDATE usuario SET Usuario=@Username, Status=@Status WHERE Id=@Id";
-                await conn.ExecuteAsync(updateUser, new { user.Username, user.Status, user.Id }, tx);
-                string deletePerfis = "DELETE FROM usuario_perfil WHERE usuario_id=@Id";
+                string updateUser = "UPDATE usuario SET nome=@Username, status_fl=@Status WHERE id=@Id";
+                await conn.ExecuteAsync(updateUser, new { user.Username, Status = user.Status ? 1 : 0, user.Id }, tx);
+                string deletePerfis = "DELETE FROM usuario_perfil WHERE usuarioid=@Id";
                 await conn.ExecuteAsync(deletePerfis, new { user.Id }, tx);
-                string insertPerfil = "INSERT INTO usuario_perfil (usuario_id, Perfil) VALUES (@UserId, @Perfil);";
+                string insertPerfil = "INSERT INTO usuario_perfil (usuarioid, perfil) VALUES (@UserId, @Perfil);";
                 foreach (var perfil in user.Perfis)
                 {
                     await conn.ExecuteAsync(insertPerfil, new { UserId = user.Id, Perfil = perfil }, tx);
