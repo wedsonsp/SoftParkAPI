@@ -1,0 +1,15 @@
+C:\Users\wedson.souza\source\repos\Cadastramento\Cadastramento.Infrastructure\bin\Debug\net8.0\Cadastramento.Infrastructure.deps.json
+C:\Users\wedson.souza\source\repos\Cadastramento\Cadastramento.Infrastructure\bin\Debug\net8.0\Cadastramento.Infrastructure.dll
+C:\Users\wedson.souza\source\repos\Cadastramento\Cadastramento.Infrastructure\bin\Debug\net8.0\Cadastramento.Infrastructure.pdb
+C:\Users\wedson.souza\source\repos\Cadastramento\Cadastramento.Infrastructure\bin\Debug\net8.0\Cadastramento.Core.dll
+C:\Users\wedson.souza\source\repos\Cadastramento\Cadastramento.Infrastructure\bin\Debug\net8.0\Cadastramento.Core.pdb
+C:\Users\wedson.souza\source\repos\Cadastramento\Cadastramento.Infrastructure\obj\Debug\net8.0\Cadastramento.Infrastructure.csproj.AssemblyReference.cache
+C:\Users\wedson.souza\source\repos\Cadastramento\Cadastramento.Infrastructure\obj\Debug\net8.0\Cadastramento.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\wedson.souza\source\repos\Cadastramento\Cadastramento.Infrastructure\obj\Debug\net8.0\Cadastramento.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\wedson.souza\source\repos\Cadastramento\Cadastramento.Infrastructure\obj\Debug\net8.0\Cadastramento.Infrastructure.AssemblyInfo.cs
+C:\Users\wedson.souza\source\repos\Cadastramento\Cadastramento.Infrastructure\obj\Debug\net8.0\Cadastramento.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\wedson.souza\source\repos\Cadastramento\Cadastramento.Infrastructure\obj\Debug\net8.0\Cadastra.4518C336.Up2Date
+C:\Users\wedson.souza\source\repos\Cadastramento\Cadastramento.Infrastructure\obj\Debug\net8.0\Cadastramento.Infrastructure.dll
+C:\Users\wedson.souza\source\repos\Cadastramento\Cadastramento.Infrastructure\obj\Debug\net8.0\refint\Cadastramento.Infrastructure.dll
+C:\Users\wedson.souza\source\repos\Cadastramento\Cadastramento.Infrastructure\obj\Debug\net8.0\Cadastramento.Infrastructure.pdb
+C:\Users\wedson.souza\source\repos\Cadastramento\Cadastramento.Infrastructure\obj\Debug\net8.0\ref\Cadastramento.Infrastructure.dll

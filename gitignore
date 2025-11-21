@@ -1,0 +1,53 @@
+## — Visual Studio — ##
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+## — Build — ##
+bin/
+obj/
+artifacts/
+Debug/
+Release/
+
+## — Arquivos temporários — ##
+*.log
+*.tmp
+*.temp
+
+## — NuGet — ##
+*.nupkg
+*.snupkg
+packages/
+*.nuget.props
+*.nuget.targets
+
+## — Rider / JetBrains — ##
+.idea/
+*.DotSettings.user
+
+## — Arquivos de Cache — ##
+*.db
+*.cache
+*.lock.json
+
+## — Configurações sensíveis — ##
+appsettings.Development.json
+appsettings.Local.json
+
+## — Sistema Operacional — ##
+.DS_Store
+Thumbs.db
+
+## — Cobertura de testes — ##
+coverage/
+TestResults/
+*.coverage
+*.coveragexml
+
+## — Outros comuns — ##
+*.swp
+*.bak
+*.orig

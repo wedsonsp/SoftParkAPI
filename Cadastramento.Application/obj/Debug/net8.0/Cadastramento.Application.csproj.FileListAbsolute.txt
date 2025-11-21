@@ -1,0 +1,11 @@
+C:\Users\wedson.souza\source\repos\Cadastramento\Cadastramento.Application\bin\Debug\net8.0\Cadastramento.Application.deps.json
+C:\Users\wedson.souza\source\repos\Cadastramento\Cadastramento.Application\bin\Debug\net8.0\Cadastramento.Application.dll
+C:\Users\wedson.souza\source\repos\Cadastramento\Cadastramento.Application\bin\Debug\net8.0\Cadastramento.Application.pdb
+C:\Users\wedson.souza\source\repos\Cadastramento\Cadastramento.Application\obj\Debug\net8.0\Cadastramento.Application.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\wedson.souza\source\repos\Cadastramento\Cadastramento.Application\obj\Debug\net8.0\Cadastramento.Application.AssemblyInfoInputs.cache
+C:\Users\wedson.souza\source\repos\Cadastramento\Cadastramento.Application\obj\Debug\net8.0\Cadastramento.Application.AssemblyInfo.cs
+C:\Users\wedson.souza\source\repos\Cadastramento\Cadastramento.Application\obj\Debug\net8.0\Cadastramento.Application.csproj.CoreCompileInputs.cache
+C:\Users\wedson.souza\source\repos\Cadastramento\Cadastramento.Application\obj\Debug\net8.0\Cadastramento.Application.dll
+C:\Users\wedson.souza\source\repos\Cadastramento\Cadastramento.Application\obj\Debug\net8.0\refint\Cadastramento.Application.dll
+C:\Users\wedson.souza\source\repos\Cadastramento\Cadastramento.Application\obj\Debug\net8.0\Cadastramento.Application.pdb
+C:\Users\wedson.souza\source\repos\Cadastramento\Cadastramento.Application\obj\Debug\net8.0\ref\Cadastramento.Application.dll
