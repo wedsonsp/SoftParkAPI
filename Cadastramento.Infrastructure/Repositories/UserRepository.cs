@@ -41,7 +41,8 @@ namespace Cadastramento.Infrastructure
                     if (perfil != null) u.Perfis.Add(perfil);
                     return u;
                 },
-                new { Offset = (page - 1) * pageSize, PageSize = pageSize }
+                new { Offset = (page - 1) * pageSize, PageSize = pageSize },
+                splitOn: "Perfil"
             );
             var totalCount = await conn.ExecuteScalarAsync<int>(sqlCount);
             return (lookup.Values, totalCount);
@@ -69,7 +70,7 @@ namespace Cadastramento.Infrastructure
                     }
                     if (perfil != null) u.Perfis.Add(perfil);
                     return u;
-                }, new { Id = id });
+                }, new { Id = id }, splitOn: "Perfil");
             return lookup.Values.FirstOrDefault();
         }
 
