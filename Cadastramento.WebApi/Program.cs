@@ -25,6 +25,8 @@ builder.Services.AddScoped<IUserRepository>(_ => new UserRepository(sqlConnectio
 // Add services to the container - Swagger for .NET 8
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+// Register controllers so attribute routed controllers are discovered
+builder.Services.AddControllers();
 
 var app = builder.Build();
 
@@ -39,6 +41,9 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+// Map attribute routed controllers
+app.MapControllers();
 
 var summaries = new[]
 {
