@@ -13,3 +13,4 @@ C:\Users\wedson.souza\source\repos\Cadastramento\Cadastramento.Infrastructure\ob
 C:\Users\wedson.souza\source\repos\Cadastramento\Cadastramento.Infrastructure\obj\Debug\net8.0\refint\Cadastramento.Infrastructure.dll
 C:\Users\wedson.souza\source\repos\Cadastramento\Cadastramento.Infrastructure\obj\Debug\net8.0\Cadastramento.Infrastructure.pdb
 C:\Users\wedson.souza\source\repos\Cadastramento\Cadastramento.Infrastructure\obj\Debug\net8.0\ref\Cadastramento.Infrastructure.dll
+C:\Users\wedson.souza\source\repos\Cadastramento\Cadastramento.Infrastructure\obj\Debug\net8.0\Cadastramento.Infrastructure.sourcelink.json

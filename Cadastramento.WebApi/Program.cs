@@ -14,7 +14,7 @@ Log.Logger = new LoggerConfiguration()
 builder.Host.UseSerilog();
 
 // Read configuration
-var redisConnectionString = builder.Configuration["Redis:Connection"] ?? "10.255.200.7:47846";
+var redisConnectionString = builder.Configuration["Redis:Connection"] ?? "10.255.200.7:6379";
 var sqlConnectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? "Server=localhost\\SQLEXPRESS;Initial Catalog=Entrevista;User ID=entrevista;Password=softpark@2025;TrustServerCertificate=True";
 
 builder.Services.AddSingleton<IConnectionMultiplexer>(_ => ConnectionMultiplexer.Connect(redisConnectionString));

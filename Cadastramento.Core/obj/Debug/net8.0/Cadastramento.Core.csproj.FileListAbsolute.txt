@@ -9,3 +9,4 @@ C:\Users\wedson.souza\source\repos\Cadastramento\Cadastramento.Core\obj\Debug\ne
 C:\Users\wedson.souza\source\repos\Cadastramento\Cadastramento.Core\obj\Debug\net8.0\refint\Cadastramento.Core.dll
 C:\Users\wedson.souza\source\repos\Cadastramento\Cadastramento.Core\obj\Debug\net8.0\Cadastramento.Core.pdb
 C:\Users\wedson.souza\source\repos\Cadastramento\Cadastramento.Core\obj\Debug\net8.0\ref\Cadastramento.Core.dll
+C:\Users\wedson.souza\source\repos\Cadastramento\Cadastramento.Core\obj\Debug\net8.0\Cadastramento.Core.sourcelink.json

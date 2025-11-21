@@ -2,6 +2,8 @@ using Microsoft.AspNetCore.Mvc;
 using Cadastramento.Infrastructure;
 using Cadastramento.Application;
 using Cadastramento.Core;
+using Cadastramento.WebApi.Extensions;
+using Serilog;
 
 namespace Cadastramento.WebApi.Controllers
 {
@@ -18,6 +20,13 @@ namespace Cadastramento.WebApi.Controllers
         [HttpGet]
         public async Task<IActionResult> GetAll([FromQuery] int page = 1, [FromQuery] int pageSize = 10)
         {
+            var session = HttpContext.GetSessionEntrevista();
+            if (session != null)
+            {
+                Log.Information("GetAll users requested by session {sessionId} user {usuario} id {idUsuario}", session.SessionId, session.Usuario, session.IdUsuario);
+                Response.Headers["X-Session-UserId"] = session.IdUsuario?.ToString() ?? string.Empty;
+            }
+
             var (users, total) = await _repo.GetPagedAsync(page, pageSize);
             var dtos = users.Select(u => new UserDto {
                 Id = u.Id,
@@ -44,6 +53,13 @@ namespace Cadastramento.WebApi.Controllers
         [HttpPost]
         public async Task<ActionResult> Create(UserDto dto)
         {
+            var session = HttpContext.GetSessionEntrevista();
+            if (session != null)
+            {
+                Log.Information("Create user requested by session {sessionId} user {usuario} id {idUsuario}", session.SessionId, session.Usuario, session.IdUsuario);
+                Response.Headers["X-Session-UserId"] = session.IdUsuario?.ToString() ?? string.Empty;
+            }
+
             var user = new User {
                 Username = dto.Username,
                 Status = dto.Status,
@@ -56,6 +72,13 @@ namespace Cadastramento.WebApi.Controllers
         [HttpPut("{id}")]
         public async Task<ActionResult> Update(int id, UserDto dto)
         {
+            var session = HttpContext.GetSessionEntrevista();
+            if (session != null)
+            {
+                Log.Information("Update user {targetId} requested by session {sessionId} user {usuario} id {idUsuario}", id, session.SessionId, session.Usuario, session.IdUsuario);
+                Response.Headers["X-Session-UserId"] = session.IdUsuario?.ToString() ?? string.Empty;
+            }
+
             var user = new User {
                 Id = id,
                 Username = dto.Username,
